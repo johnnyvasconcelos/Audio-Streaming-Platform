@@ -4,7 +4,7 @@ const IndexPlayer = () => {
     <>
     <section className="audio__player">
         <img className="imagem.album" alt="imagem" />
-        <div class="">
+        <div>
             <div className="playPause">
                 &gt;
             </div>

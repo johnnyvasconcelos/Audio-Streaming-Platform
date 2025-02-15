@@ -1,19 +1,20 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-const MusicItem = () => {
+import { Link } from 'react-router-dom'
+const MusicItem = ({id, name, image, banner, artist, pathId}) => {
   return (
                 <>
-                  <a href="#" className="music__item item">
-                    <div class="image__item">
-                      <img src="/src/assets/images/albums/0.jpg" alt="ícone" />
+                  <Link to={`${pathId}/${id}`} className="music__item item">
+                    <div className="image__item">
+                      <img src={image} alt={artist ? `Capa Álbum ${name} de ${artist}` : `Artista ${name}`} />
                       <FontAwesomeIcon icon={faCirclePlay} />
                     </div>
                     <div className="text__item">
-                      <h3>Music Name</h3>
-                      <h3>Artist</h3>
+                      <h3>{name}</h3>
+                      <h3>{artist ?? "Artist"}</h3>
                     </div>
-                  </a>
+                  </Link>
                 </>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import woman from '/src/assets/images/woman.webp'
 import wave from '/src/assets/images/wave.png'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 const header = <>
@@ -10,8 +11,8 @@ const header = <>
             <h1>Audio Streaming Platform</h1>
             <p>Lorem Ipsum Dolor Amet Titilandus.</p>
             <div className="button-container flex start">
-                <a href="/" className="btn-header btn">Explore</a>
-                <a href="/" className="btn-play"><FontAwesomeIcon icon={faPlay} /></a>
+                <Link to="/songs" className="btn-header btn">Explore</Link>
+                <p className="btn-play"><FontAwesomeIcon icon={faPlay} /></p>
                 <span>Play Vídeo</span>
             </div>
         </div>
