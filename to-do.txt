@@ -1,0 +1,7 @@
+- player fixed no bottom
+- 3 pontinhos nas músicas (reproduzir em seguida, acessar artista, compartilhar)
+- menu bar surgindo de cima com scroll
+- menu mobile 
+- favicon
+- títulos, botões e descrições
+- carrossel
