@@ -23,7 +23,7 @@ body {
     background-image: linear-gradient(86deg, var(--MainColor), var(--DarkPurple), var(--Dark), var(--MainColor));
     background-attachment: fixed;
     min-height: 100svh;
-    background-size: 150% 150%; /* Ajuste o tamanho para permitir mais movimento */
+    background-size: 150% 150%;
     animation: subtleMove 16s ease-in-out infinite;
 }
 @keyframes subtleMove {
@@ -105,29 +105,9 @@ p {
 .space-min {
     margin-top: 30px;
 }
-/*
-.section {
-    border-radius: 20px;
-    background-color: var(--Light);
-    padding: 60px;
-    color: var(--Dark);
+.space-page {
+    margin-top: 90px;
 }
-.section h2,
-.section p {
-    color: var(--DarkPurple);
-}
-.section .btn {
-    border: 2px solid var(--DarkPurple);
-    color: var(--DarkPurple);
-}
-.section .btn:hover {
-    color: var(--Light);
-    background-color: var(--DarkPurple);
-}
-.section .line {
-    background-color: var(--DarkPurple);
-}
-*/
 /* nav bar */
 .top__bar {
     height: 80px;
