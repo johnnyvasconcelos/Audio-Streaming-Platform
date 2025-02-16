@@ -1,17 +1,26 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { songsArray } from '../assets/database/songs'
+import { artistArray } from '../assets/database/artists'
 const Song = () => {
+  const {id} = useParams()
+  const {image, name, duration, artist, audio, index} = songsArray.filter(
+    (current) => current.id === Number(id)
+  )[0]
+  const artistOb = artistArray.filter(
+    (currentArt) => currentArt.name === artist
+  )[0]
   return (
     <>
       <section className="song__item flex column">
         <div className="container">
-          <img src="https://i.scdn.co/image/ab67616d00001e022774b00531d558bc19e12a24" alt="capa album tal"/>
+          <img src={image} alt={`capa música ${name}`}/>
         </div>
-        <div class="flex play__details">
-          <Link to="/artist/1" className="song__album">
-            <img src="https://i.scdn.co/image/ab67616d00001e022774b00531d558bc19e12a24" alt="capa album tal"/>
+        <div className="flex play__details">
+          <Link to={`/artist/${artistOb.id}`} className="song__album">
+            <img src={artistOb.image} alt={artistOb.name}/>
           </Link>
           <div className="player flex column">
               <div className="buttons flex">
@@ -28,12 +37,12 @@ const Song = () => {
               <div className="bar__progress flex">
                 <span className="music__initial">00:00</span>
                 <div className="bar"></div>
-                <span className="music__time">02:30</span>
+                <span className="music__time">{duration}</span>
               </div>
           </div>
-          <div class="song__name">
-            <h3>song name</h3>
-            <h4>author name</h4>
+          <div clasName="song__name">
+            <h3>{name}</h3>
+            <h4>{artist}</h4>
           </div>
         </div>
       </section>
