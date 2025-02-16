@@ -6,3 +6,4 @@
 - títulos, botões e descrições
 - carrossel
 - btn vídeo
+- bar click 

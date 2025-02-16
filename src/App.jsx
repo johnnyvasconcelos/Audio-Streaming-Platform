@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar.jsx';
+import Footer from './components/Footer.jsx';
 import Home from './pages/Home';
 import Artists from './pages/Artists';
 import Artist from './pages/Artist';
@@ -21,6 +22,7 @@ const main =
                   <Route path="/about" element={<About/>} />
                   <Route path="/plans" element={<Plans/>} />
                 </Routes>
+                <Footer/>
               </BrowserRouter>
 const App = () => main
 export default App

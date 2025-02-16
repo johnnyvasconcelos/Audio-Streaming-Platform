@@ -8,13 +8,19 @@
     --DarkBlue: #35356e;
     --DarkPurple: #67254e;
     --DarkGray: #202020;
+    --Yellow: #ffd700;
     --Transition: 0.5s all ease-out;
     --FastTransition: 0.15s all ease-out;
+    --PlayerProgress: 0%;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+::selection {
+    background-color: var(--Yellow);
+    color: var(--DarkGray);
 }
 body {
     font-family: var(--Font);
@@ -399,4 +405,104 @@ p {
     position: fixed;
     bottom: 0;
     z-index: 30;
+}
+/* artist */
+.artist__header {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+.artist__header .artist__title {
+    z-index: 10;
+    position: absolute;
+    font-size: 80px;
+    bottom: 40px;
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+}
+.artist__header::before {
+    content: '';
+    background-color: #21051653;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.artist__body h2 {
+    font-size: 35px;
+}
+.song__list {
+    margin-top: 40px;
+}
+.song__list .song__item {
+    padding: 15px 25px;
+    border: 1px solid #78787820;
+    color: var(--Light);
+    background-color: #19191acb;
+}
+.song__list .song__item:hover {
+    background-color: var(--DarkPurple);
+}
+.song__list .song__item-album {
+    gap: 15px;
+}
+.song__list .song__item-album img {
+    max-width: 50px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.see-more {
+    margin-top: 25px;
+    cursor: pointer;
+}
+.see-more:hover {
+    text-decoration: underline;
+}
+.footer {
+    padding: 40px 0;
+    border-top: 1px solid #cbcbcb20;
+}
+.music__item--icon {
+    transition: var(--FastTransition);
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    width: 76px;
+    height: 76px;
+    color: var(--Light);
+    z-index: 30;
+}
+.music__item--icon:hover {
+    transform: translateY(-7px);
+}
+/* song */
+.song__item .player .bar {
+    position: relative;
+    border-radius: 40px;
+    height: 8px;
+    background-color: var(--Light);
+    width: 300px;
+    cursor: pointer;
+}
+.song__item .player .bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--PlayerProgress);
+    height: 8px;
+    border-radius: 40px;
+    background-color: var(--DarkPurple);
+}
+.song__item .player .buttons {
+    gap: 20px;
+}
+.song__item .player .buttons svg {
+    cursor: pointer;
 }

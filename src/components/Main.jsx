@@ -13,7 +13,7 @@ const Main = ({type}) => {
                 <section className={path === '/' && type === 'home' ? 'main section container space flex column' : 'main section container space-page flex column'}>
                   <TitleControls title="Artistas Populares" path="/artists" />
                   <div className="items">
-                  <ItemsArea items={5} title="artista" itemsArray ={artistArray} pathId="artist" />
+                  <ItemsArea items={5} title="artista" itemsArray ={artistArray} pathId="/artist" />
                   </div>
               </section>
             </>
