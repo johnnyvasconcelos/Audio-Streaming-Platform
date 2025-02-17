@@ -11,8 +11,6 @@ const Artist = () => {
   const songsArtist = songsArray.filter((currentSong, index) => currentSong.artist === artId.name)
   const randomIndex = Math.floor(Math.random() * (songsArray.length - 1))
   const randomId = songsArray[randomIndex].id
-
-
   console.log(artId)
   return (
     <>

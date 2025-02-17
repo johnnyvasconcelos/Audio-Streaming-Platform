@@ -12,6 +12,7 @@ const Song = () => {
   const artistOb = artistArray.filter(
     (currentArt) => currentArt.name === artist
   )[0]
+  const songObj = songsArray.filter(currentSong => currentSong.id === Number(id))
   return (
     <>
       <section className="song__item flex column">
@@ -24,13 +25,13 @@ const Song = () => {
           </Link>
           <div className="player flex column">
               <div className="buttons flex">
-                <Link to="/song/2" className="prev">
+                <Link to={`/song/${songObj[0].id - 1}`} className="prev">
                   <FontAwesomeIcon icon={faBackward} />
                 </Link>
                 <span className="play">
                   <FontAwesomeIcon icon={faPlay} />
                 </span>
-                <Link to="/song/3" className="next">
+                <Link to={`/song/${songObj[0].id + 1}`} className="next">
                   <FontAwesomeIcon icon={faForward} />
                 </Link>
               </div>
