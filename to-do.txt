@@ -6,4 +6,9 @@
 - títulos, botões e descrições
 - carrossel
 - btn vídeo
-- bar click 
+- bar click
+- Criar a API
+- Criar a conexão com o banco de dados
+- Conectar o Front com o Back
+- Lógica do player
+- GitHub e Deploy
