@@ -11,12 +11,12 @@ const Artist = () => {
   const songsArtist = songsArray.filter((currentSong, index) => currentSong.artist === artId.name)
   const randomIndex = Math.floor(Math.random() * (songsArray.length - 1))
   const randomId = songsArray[randomIndex]._id
-  console.log(artId)
+  console.log(artId.banner + " Banner.webp")
   return (
     <>
       <section className="artist">
         <div className="artist__header" style={{
-    backgroundImage: `url(${artId.banner}), 
+    backgroundImage: `url('/src/assets/images/artists/${artId.banner} Banner.webp'), 
                       linear-gradient(to bottom, var(--Dark), var(--DarkBlue), var(--DarkPurple))`,
     backgroundSize: "cover",
     backgroundPosition: "center"

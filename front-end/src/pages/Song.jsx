@@ -14,11 +14,11 @@ const Song = () => {
     <>
       <section className="song__item flex column">
         <div className="container">
-          <img src={songObj.image} alt={`capa música ${songObj.name}`} />
+          <img src={`/src/assets/images/albums/${songObj.image}.webp`} alt={`capa música ${songObj.name}`} />
         </div>
         <div className="flex play__details">
           <Link to={`/artist/${artistOb._id}`} className="song__album">
-            <img src={artistOb.image} alt={artistOb.name} />
+            <img src={`/src/assets/images/artists/${artistOb.image}.webp`} alt={artistOb.name} />
           </Link>
           <div className="player flex column">
             <div className="buttons flex">

@@ -6,7 +6,7 @@ const SongItem = ({image, name, duration, artist, audio, _id, index}) => {
        <Link to={`/song/${_id}`} className="song__item flex">
             <div className="song__item-album flex start">
                 <p>{index + 1}</p>
-                <img src={image} alt={`capa imagem música ${name} - ${artist}`} />
+                <img src={`/src/assets/images/albums/${image}.webp`} alt={`capa imagem música ${name} - ${artist}`} />
                 <p className="song__item-name">{name}</p>
             </div>
             <p>{duration}</p>
