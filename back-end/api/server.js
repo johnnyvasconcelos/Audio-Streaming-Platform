@@ -1,6 +1,11 @@
 import express from 'express';
+// Middleware = cors
 const App = express();
-const PORT = 3421;
+const PORT = 3400;
+import cors from 'cors';
+
+App.use(cors())
+
 import { songsArray } from '../../front-end/src/assets/database/songs.js';
 import { db } from './connect.js'
 App.listen(PORT, () => {

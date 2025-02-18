@@ -1,3 +1,5 @@
+ 
+/*
 export const artistArray = [
   {
     id: 1,
@@ -122,3 +124,8 @@ export const artistArray = [
     banner: "https://i.scdn.co/image/ab676186000010169415572375bac1960f9de7e5",
   },
 ];
+*/
+import {artistArray} from "../../../api/api.js"
+
+
+export {artistArray}
