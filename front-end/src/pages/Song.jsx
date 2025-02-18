@@ -7,12 +7,12 @@ import { artistArray } from '../assets/database/artists'
 const Song = () => {
   const {id} = useParams()
   const {image, name, duration, artist, audio, index} = songsArray.filter(
-    (current) => current.id === Number(id)
+    (current) => current._id === id
   )[0]
   const artistOb = artistArray.filter(
     (currentArt) => currentArt.name === artist
   )[0]
-  const songObj = songsArray.filter(currentSong => currentSong.id === Number(id))
+  const songObj = songsArray.filter(currentSong => currentSong._id === id)
   return (
     <>
       <section className="song__item flex column">
@@ -20,7 +20,7 @@ const Song = () => {
           <img src={image} alt={`capa música ${name}`}/>
         </div>
         <div className="flex play__details">
-          <Link to={`/artist/${artistOb.id}`} className="song__album">
+          <Link to={`/artist/${artistOb._id}`} className="song__album">
             <img src={artistOb.image} alt={artistOb.name}/>
           </Link>
           <div className="player flex column">

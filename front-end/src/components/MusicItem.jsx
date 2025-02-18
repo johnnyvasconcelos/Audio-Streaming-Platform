@@ -2,10 +2,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
-const MusicItem = ({id, name, image, banner, artist, pathId}) => {
+const MusicItem = ({_id, name, image, banner, artist, pathId}) => {
   return (
                 <>
-                  <Link to={`${pathId}/${id}`} className="music__item item">
+                  <Link to={`${pathId}/${_id}`} className="music__item item">
                     <div className="image__item">
                       <img src={image} alt={artist ? `Capa Álbum ${name} de ${artist}` : `Artista ${name}`} />
                       <FontAwesomeIcon icon={faCirclePlay} />

@@ -7,10 +7,10 @@ import { artistArray } from '../assets/database/artists.js'
 import { songsArray } from '../assets/database/songs.js'
 const Artist = () => {
   const { id } = useParams()
-  const artId = artistArray.filter((currentArtist, index) => currentArtist.id === Number(id))[0]
+  const artId = artistArray.filter((currentArtist, index) => currentArtist._id === id)[0]
   const songsArtist = songsArray.filter((currentSong, index) => currentSong.artist === artId.name)
   const randomIndex = Math.floor(Math.random() * (songsArray.length - 1))
-  const randomId = songsArray[randomIndex].id
+  const randomId = songsArray[randomIndex]._id
   console.log(artId)
   return (
     <>
