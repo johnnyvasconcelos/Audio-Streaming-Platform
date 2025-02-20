@@ -9,7 +9,7 @@ const header = <>
     <div className="container flex">
         <div className="header__text">
             <h1>Audio Streaming Platform</h1>
-            <p>Lorem Ipsum Dolor Amet Titilandus.</p>
+            <p>Discover and stream your favorite audio <br/>content anytime, anywhere.</p>
             <div className="button-container flex start">
                 <Link to="/songs" className="btn-header btn">Explore</Link>
                 <p className="btn-play"><FontAwesomeIcon icon={faPlay} /></p>
