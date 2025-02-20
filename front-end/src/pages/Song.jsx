@@ -43,6 +43,11 @@ const Song = () => {
               <div className="bar"></div>
               <span className="music__time">{songObj.duration}</span>
             </div>
+            <audio controls>
+              <source src={`/src/assets/musics/${songObj.audio}.mp3`} type="audio/mpeg" />
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+
           </div>
           <div className="song__name">
             <h3>{songObj.name}</h3>
