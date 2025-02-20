@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
     <footer className="container space-page footer flex">
-        <p>Projeto Audio Streaming Platform</p>
-        <a href="https://github.com/johnnyvasconcelos/" target="_blank">Desenvolvido por Johnny Vasconcelos</a>
+        <p>Audio Streaming Platform Project</p>
+        <a href="https://github.com/johnnyvasconcelos/" target="_blank">Developed by Johnny Vasconcelos</a>
     </footer>
     </>
   )

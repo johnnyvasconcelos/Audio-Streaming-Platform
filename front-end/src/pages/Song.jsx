@@ -6,7 +6,6 @@ const Song = () => {
   const { id } = useParams();
   const songIndex = songsArray.findIndex((song) => song._id === id);
   const songObj = songsArray[songIndex];
-  
   return (
     <>
       <section className="song__item flex column">

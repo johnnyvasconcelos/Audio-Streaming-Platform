@@ -12,6 +12,7 @@
     --Transition: 0.5s all ease-out;
     --FastTransition: 0.15s all ease-out;
     --PlayerProgress: 0%;
+    --Move: 0px;
 }
 * {
     margin: 0;
@@ -60,6 +61,9 @@ h2 {
 }
 p {
     font-size: 18px;
+}
+audio {
+    display: none;
 }
 .btn {
     padding: 15px 25px;
@@ -122,8 +126,12 @@ p {
     width: 120px;
     overflow: hidden;
 }
+.top__bar .top__container .top__logo:hover img {
+    transform: scale(95%);
+}
 .top__bar .top__container .top__logo img {
     width: 100%;
+    transition: var(--FastTransition);
 }
 .top__bar .top__container .top__menu {
     gap: 20px;
@@ -290,8 +298,10 @@ p {
     gap: 30px;
     position: absolute;
     align-items: flex-start;
+    transition: var(--FastTransition);
     left: 0;
     height: 100%;
+    margin-left: var(--Move);
 }
 .items .item {
     color: var(--Light);
@@ -482,7 +492,17 @@ p {
     transform: translateY(-7px);
 }
 /* song */
-.song__item .player .bar {
+.song__item > .container {
+    min-height: 550px;
+}
+.song__item > .container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+.player .bar {
     position: relative;
     border-radius: 40px;
     height: 8px;
@@ -490,7 +510,7 @@ p {
     width: 300px;
     cursor: pointer;
 }
-.song__item .player .bar::after {
+.player .bar::after {
     content: '';
     position: absolute;
     top: 0;
@@ -500,9 +520,233 @@ p {
     border-radius: 40px;
     background-color: var(--DarkPurple);
 }
-.song__item .player .buttons {
+.player .buttons {
     gap: 20px;
 }
-.song__item .player .buttons svg {
+.player .buttons svg {
     cursor: pointer;
 }
+.play__details {
+    width: 100%;
+    overflow: hidden;
+    height: 120px;
+    margin-bottom: -89px;
+    background: #0000007e;
+    justify-content: space-between;
+}
+.play__details .container .song__album {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+}
+.play__details .container .song__album img {
+    width: 100%;
+}
+.play__details .container > .player {
+    width: 65%;
+    overflow: hidden;
+    gap: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.play__details .container .player .bar__progress {
+    width: 70%;
+    gap: 10px;
+  
+}
+.play__details .container .player .buttons .play svg {
+    font-size: 40px;
+}
+.play__details .container .player .buttons > a {
+    font-size: 20px;
+}
+.play__details .container .player .bar__progress .bar {
+    width: 85%;
+}
+.play__details .container .player .bar__progress span {
+    display: block;
+    width: 45px;
+}
+.play__details .container .song__name {
+    width: 20%;
+    overflow: hidden;
+}
+.play__details .container .song__name h4 {
+    font-size: 15px;
+    font-weight: 300;
+}
+.play__details .container .song__name .title {
+    white-space: nowrap;
+    transition: 2s;
+}
+.play__details.home {
+    background-color: var(--Light);
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    color: var(--DarkPurple);
+}
+.play__details.home .container .player .buttons {
+    gap: 10px;
+}
+.play__details.home .container .player .buttons svg {
+    color: var(--DarkPurple);
+}
+.play__details .container .player .bar__progress .bar {
+    background-color: var(--DarkPurple);
+    height: 6px;
+    border-radius: 50px;
+}
+.play__details .container .player .bar__progress .bar::after {
+    background-color: var(--Yellow);
+}
+.play__details.home .container .song__name {
+    color: var(--Dark);
+}
+/* plans */
+.card {
+    background-color: var(--Light);
+    position: relative;
+    border-radius: 10px;
+    padding: 30px;
+    width: 32%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--Transition);
+}
+.card h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: var(--Dark);
+    font-weight: 900;
+}
+.card h2 span {
+    font-size: 20px;
+    font-weight: 600;
+}
+.card p {
+    font-size: 16px;
+    color: var(--DarkGray);
+    margin-bottom: 15px;
+}
+.card.popular .string {
+    background-color: #a31273;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--Light);
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.card ul {
+    margin-bottom: 20px;
+    color: var(--DarkGray);
+    border-top: 1px solid #c1c1c1;
+    margin: 25px 0 65px 0;
+    padding-top: 25px;
+}
+.card ul li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+.card button {
+    background-color: transparent;
+    border: 1px solid #676767;
+    color: var(--DarkGray);
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--FastTransition);
+    width: 100%;
+    font-weight: 700;
+}
+.card button:hover {
+    background-color: var(--DarkPurple);
+    color: var(--Light);
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card .title {
+    font-weight: 700;
+    margin: 20px 0;
+}
+.card .description {
+    color: #676767;
+}
+.plans__text {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: -90px;
+  }
+  .plans__text .container {
+    max-width: 960px;
+    margin: 0 auto;
+    color: #333;
+  }
+  .plans__text h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  .plans__text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .plans__text h2:first-of-type {
+    margin-top: 0;
+  }
+  /* about */
+  .about__text {
+    background: transparent;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    color: var(--Light);
+  }
+  .about__text img {
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    width: 140px;
+    display: none;
+  }
+  .about__text .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .about__text p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .about__text .first-letter {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--Light);
+    float: left;
+    margin-right: 10px;
+    line-height: 1;
+  }
+  @media (max-width: 768px) {
+    .plans__text h2 {
+        font-size: 20px;
+      }
+      .plans__text p {
+        font-size: 14px;
+      }
+    .about__text p {
+      font-size: 16px;
+    }
+  }

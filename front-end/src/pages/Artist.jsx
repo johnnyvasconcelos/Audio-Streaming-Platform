@@ -26,7 +26,7 @@ const Artist = () => {
           </div>
         </div>
         <div className="artist__body space-page container">
-          <h2>Populares</h2>
+          <h2>Popular</h2>
           <SongList songs={songsArtist} />
         </div>
         <Link to={`/song/${randomId}`}>
