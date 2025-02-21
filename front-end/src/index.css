@@ -766,6 +766,23 @@ audio {
     }
   }
   @media (max-width: 990px) {
+    .main__header {
+        height: 450px;
+        background-image: url('/src/assets/images/woman.webp');
+        padding-bottom: 40px;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    .main__header::before {
+        content: '';
+        background-color: #441532a3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     .main__header .container .header__text h1 {
         font-size: 40px;
     }
@@ -784,9 +801,6 @@ audio {
     .top__bar .top__container .top__logo {
         width: 100px;
         overflow: hidden;
-    }
-    .main__header {
-        height: 400px;
     }
     .top__bar .top__menu--mobile img {
         width: 100px;
