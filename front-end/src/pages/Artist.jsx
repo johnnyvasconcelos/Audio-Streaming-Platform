@@ -37,7 +37,7 @@ const Artist = () => {
       <div
         className="artist__header"
         style={{
-          backgroundImage: `url('/src/assets/images/artists/${artId.banner} Banner.webp'),
+          backgroundImage: `url('/${artId.banner} Banner.webp'),
             linear-gradient(to bottom, var(--Dark), var(--DarkBlue), var(--DarkPurple))`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',

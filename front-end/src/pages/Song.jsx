@@ -10,7 +10,7 @@ const Song = () => {
     <>
       <section className="song__item flex column">
         <div className="container">
-          <img src={`/src/assets/images/albums/${songObj.image}.webp`} alt={`capa música ${songObj.name}`} />
+          <img src={`/${songObj.image}.webp`} alt={`capa música ${songObj.name}`} />
         </div>
         < Player />
       </section>

@@ -89,7 +89,7 @@ const IndexPlayer = ({cls}) => {
         <section className={`play__details ${cls}`}>
             <div className="container flex">
                 <div className="song__album">
-                    <img src={`/src/assets/images/artists/${artistOb.image}.webp`} alt={artistOb.name} />
+                    <img src={`/${artistOb.image}.webp`} alt={artistOb.name} />
                 </div>
                 <div className="player flex column">
                     <div className="buttons flex">

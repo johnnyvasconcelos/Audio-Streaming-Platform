@@ -7,7 +7,7 @@ const MusicItem = ({_id, name, image, banner, artist, pathId}) => {
                 <>
                   <Link to={`${pathId}/${_id}`} className="music__item item">
                     <div className="image__item">
-                      <img src={artist ? `/src/assets/images/albums/${image}.webp` : `/src/assets/images/artists/${image}.webp`} alt={artist ? `Capa Álbum ${name} de ${artist}` : `Artista ${name}`} />
+                      <img src={artist ? `/${image}.webp` : `/${image}.webp`} alt={artist ? `Capa Álbum ${name} de ${artist}` : `Artista ${name}`} />
                       <FontAwesomeIcon icon={faCirclePlay} />
                     </div>
                     <div className="text__item">

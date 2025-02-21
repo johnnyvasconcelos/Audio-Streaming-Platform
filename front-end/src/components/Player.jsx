@@ -73,7 +73,7 @@ const Player = () => {
         <section className="play__details">
             <div className="container flex">
             <Link to={`/artist/${artistOb._id}`} className="song__album">
-                <img src={`/src/assets/images/artists/${artistOb.image}.webp`} alt={artistOb.name} />
+                <img src={`/${artistOb.image}.webp`} alt={artistOb.name} />
             </Link>
             <div className="player flex column">
                 <div className="buttons flex">
