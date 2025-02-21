@@ -14,9 +14,10 @@ app.get('/api/artists', async (req, res) => {
     if (!db) return res.status(500).send('Erro na conexão com o banco de dados.');
     res.send(await db.collection('artists').find({}).toArray());
 });
-app.use(express.static(path.join(__dirname, '../../front-end/dist')));
-app.get('*', async (req, res) => {
-    res.sendFile(path.join(__dirname, '../../front-end/dist/index.html'));
+const frontEndPath = path.join(__dirname, '../front-end/dist');
+app.use(express.static(frontEndPath));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontEndPath, 'index.html'));
 });
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
