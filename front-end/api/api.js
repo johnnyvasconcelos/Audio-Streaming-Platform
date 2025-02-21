@@ -1,5 +1,7 @@
 import axios from "axios"
-const URI = "http://localhost:4000"
+import 'dotenv/config'
+const NODE_ENV = process.env.NODE_ENV
+const URI = NODE_ENV === 'development' ? "http://localhost:4000/api" : "/api"
 const responseArtists = await axios.get(URI + '/artists')
 const responseSongs = await axios.get(URI + '/songs')
 export const artistArray = responseArtists.data
