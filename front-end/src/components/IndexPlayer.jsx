@@ -5,7 +5,6 @@ import { songsArray } from '../assets/database/songs';
 import { artistArray } from '../assets/database/artists';
 
 const IndexPlayer = ({cls}) => {
-    // Inicializando o estado para o índice da música atual (começa com a primeira música)
     const [currentIndex, setCurrentIndex] = useState(0);
     const songObj = songsArray[currentIndex];
     const artistOb = artistArray.find((artist) => artist.name === songObj.artist);

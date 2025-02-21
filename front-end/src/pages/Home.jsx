@@ -7,7 +7,7 @@ const Home = () => {
     <>
     <Header />
     <Main type="home" />
-    <IndexPlayer cls="home"/>
+    {/* <IndexPlayer cls="home"/> */}
     </>
   )
 }
