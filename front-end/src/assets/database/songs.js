@@ -1,5 +1,5 @@
 import axios from "axios";
-const URI = "http://localhost:4000";
+const URI = "https://audio-streaming-platform.onrender.com/api/";
 export let songsArray = [];
 export let artistArray = [];
 const loadData = async () => {
