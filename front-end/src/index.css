@@ -778,6 +778,9 @@ audio {
         letter-spacing: 0.8px;
         font-size: 15px;
     }
+    .top__bar {
+        transition: var(--Transition);
+    }
     .top__bar .top__container .top__logo {
         width: 100px;
         overflow: hidden;
@@ -789,6 +792,15 @@ audio {
         width: 100px;
         display: block;
         margin: 15px auto 50px auto;
+    }
+    .top__bar.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(86deg, var(--MainColor), var(--DarkPurple), var(--Dark), var(--MainColor));
+        width: 100%;
+        box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+        z-index: 250;
     }
     .top__bar .top__container .top__menu,
     .top__bar .top__container .top__btn,
@@ -934,6 +946,14 @@ audio {
     }
   }
   @media (max-width: 670px) {
+    .artist__header .artist__title {
+        font-size: 60px;
+    }
+    .music__item--icon {
+        width: 40px;
+        right: 40px;
+        bottom: 40px;
+    }
     .main.section .items .items-area .music__item {
         width: 100%;
         margin-bottom: 10px;
@@ -952,6 +972,61 @@ audio {
     }
     .card.popular .string {
         font-size: 12px;
+    }
+    .song__list .song__item {
+        padding: 15px 20px;
+        gap: 10px;
+    }
+    .song__list .song__item-album img {
+        margin-left: 0;
+    }
+    .song__list .song__item-album .song__item-name {
+        font-size: 14px;
+    }
+  }
+  @media (max-width: 450px) {
+    .artist__header {
+        height: 400px;
+    }
+    .play__details {
+        height: 160px;
+        margin-bottom: -60px;
+    }
+    .play__details .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    .play__details .container > .player {
+        gap: 10px;
+    }
+    .play__details .container .song__album {
+        display: none;
+    }
+    .play__details .container .song__name {
+        width: 100%;
+        text-align: center;
+    }
+    .play__details .container .player {
+        position: static;
+        width: 100%;
+        transform: translate(0,0);
+    }
+    .play__details .container .player .bar__progress {
+        width: 100%;
+    }
+    .play__details .container .song__name .title {
+        margin-bottom: 6px;
+        display: block;
+        font-size: 14px;
+    }
+    .play__details .container .song__name .title h3 {
+        font-weight: lighter!important;
+    }
+    .play__details .container .song__name h4 {
+        font-weight: lighter!important;
+        font-size: 14px;
     }
   }
   @media (max-width: 360px) {

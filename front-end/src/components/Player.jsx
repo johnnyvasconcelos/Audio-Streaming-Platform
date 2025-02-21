@@ -110,7 +110,7 @@ const Player = () => {
                     <h3>{songObj.name}</h3>
                 </span>
                 <span>
-                    <h4>{songObj.artist}</h4>
+                    <h4><Link to={`/artist/${artistOb._id}`}>{songObj.artist}</Link></h4>
                 </span>
             </div>
             </div>
