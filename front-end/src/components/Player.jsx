@@ -101,7 +101,7 @@ const Player = () => {
                     <span className="music__time">{songObj.duration}</span>
                 </div>
                 <audio ref={audioPlayer} className="audio__player" controls>
-                    <source src={`/src/assets/musics/${songObj.audio}.mp3`} type="audio/mpeg" />
+                    <source src={`/musics/${songObj.audio}.mp3`} type="audio/mpeg" />
                     Seu navegador não suporta o elemento de áudio.
                 </audio>
             </div>
