@@ -1,11 +1,6 @@
-import axios from "axios";
-const URI = "https://audio-streaming-platform.onrender.com/api";
-export let songsArray = [];
-export let artistArray = [];
-const loadData = async () => {
-    const responseSongs = await axios.get(URI + "/songs");
-    const responseArtists = await axios.get(URI + "/artists");
-    songsArray = responseSongs.data;
-    artistArray = responseArtists.data;
-};
-loadData();
+import axios from "axios"
+const URI = "https://audio-streaming-platform.onrender.com/api"
+const responseArtists = await axios.get(URI + '/artists')
+const responseSongs = await axios.get(URI + '/songs')
+export const artistArray = responseArtists.data
+export const songsArray = responseSongs.data
